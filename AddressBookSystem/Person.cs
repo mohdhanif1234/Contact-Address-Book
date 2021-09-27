@@ -8,7 +8,7 @@ namespace AddressBookSystem
 {
     class Person
     {
-        // UC-2: Adding a new contact in the present address book
+        // UC-3: Editing a contact in the present address book
 
         // Declaring member data
         string firstName, lastName, address, city, state, zipCode, phoneNum;
@@ -53,11 +53,20 @@ namespace AddressBookSystem
             }
         }
 
-        // Adding a new contact to address book
-        public static void addNewContact(string firstName, string lastName, string address, string city, string state, string zipCode, string phoneNum)
+        // Editing the first name of the person
+        public static void EditContactName(string changeName)
         {
-            Person addressList = new Person("Mr.A", "PQR", "XYZ", "CityQ", "StateP", "444444", "9999999999");
-            personList.Add(addressList);
+            int ind = -1;
+            for (int i = 0; i < personList.Count; i++)
+            {
+                if (personList[i].firstName == changeName)
+                {
+                    ind = i;
+                }
+            }
+            Person newUp = personList[ind];
+            newUp.firstName = "Muhammad Hanif";
+            personList[ind] = newUp;
         }
 
         // Printing the present contacts in address book

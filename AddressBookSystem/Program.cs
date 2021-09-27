@@ -18,8 +18,9 @@ namespace AddressBookSystem
             // Creating initial address book with some contact address
             Person.AddList(n);
 
-            // Adding new contact to address book
-            Person.addNewContact("firstName", "lastName", "address", "city", "state", "zipCode", "phoneNum");
+            // Call function to edit contact name
+            string str = "Hanif";
+            Person.EditContactName(str);
 
             // Calling a method to print present contact in address book
             Person.PrintList();
