@@ -18,9 +18,11 @@ namespace AddressBookSystem
             // Creating initial address book with some contact address
             Person.AddList(n);
 
-            // Call function to edit contact name
-            string str = "Hanif";
-            Person.EditContactName(str);
+            // Deleting a contact address from address book
+            Console.WriteLine("");
+            Console.Write("Enter the first name that you want to delete: ");
+            string delName = Console.ReadLine();
+            Person.Delete(delName);
 
             // Calling a method to print present contact in address book
             Person.PrintList();

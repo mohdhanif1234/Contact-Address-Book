@@ -8,7 +8,7 @@ namespace AddressBookSystem
 {
     class Person
     {
-        // UC-3: Editing a contact in the present address book
+        // UC-4: Deleting a contact in the present address book
 
         // Declaring member data
         string firstName, lastName, address, city, state, zipCode, phoneNum;
@@ -53,20 +53,21 @@ namespace AddressBookSystem
             }
         }
 
-        // Editing the first name of the person
-        public static void EditContactName(string changeName)
+        // Deleting a contact from the present address book
+        public static void Delete(string deleteContact)
         {
             int ind = -1;
             for (int i = 0; i < personList.Count; i++)
             {
-                if (personList[i].firstName == changeName)
+                if (personList[i].firstName == deleteContact)
                 {
                     ind = i;
                 }
             }
-            Person newUp = personList[ind];
-            newUp.firstName = "Muhammad Hanif";
-            personList[ind] = newUp;
+            if (ind > -1)
+            {
+                personList.RemoveAt(ind);
+            }
         }
 
         // Printing the present contacts in address book
