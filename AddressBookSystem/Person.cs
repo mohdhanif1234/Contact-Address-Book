@@ -8,7 +8,7 @@ namespace AddressBookSystem
 {
     class Person
     {
-        // UC-4: Deleting a contact in the present address book
+        // UC-5: Adding multiple contacts in the address book one by one
 
         // Declaring member data
         string firstName, lastName, address, city, state, zipCode, phoneNum;
@@ -28,46 +28,26 @@ namespace AddressBookSystem
         // Creating a list to store the object of the type Person
         public static List<Person> personList = new List<Person>();
 
-        // Adding contacts in empty address book of type List
-        public static void AddList(int n)
+        // Adding  multiple contacts in empty address book of type List
+        public static void AddList()
         {
-            for (int i = 0; i < n; i++)
-            {
-                Console.WriteLine("");
-                Console.Write("Enter the first name: ");
-                string firstName = Console.ReadLine();
-                Console.Write("Enter the last name: ");
-                string lastName = Console.ReadLine();
-                Console.Write("Enter the address: ");
-                string address = Console.ReadLine();
-                Console.Write("Enter the city name: ");
-                string city = Console.ReadLine();
-                Console.Write("Enter the name of the state: ");
-                string state = Console.ReadLine();
-                Console.Write("Enter the zipcode: ");
-                string zipCode = Console.ReadLine();
-                Console.Write("Enter the phone number: ");
-                string phoneNum = Console.ReadLine();
-                Person addressList = new Person(firstName, lastName, address, city, state, zipCode, phoneNum);
-                personList.Add(addressList);
-            }
-        }
-
-        // Deleting a contact from the present address book
-        public static void Delete(string deleteContact)
-        {
-            int ind = -1;
-            for (int i = 0; i < personList.Count; i++)
-            {
-                if (personList[i].firstName == deleteContact)
-                {
-                    ind = i;
-                }
-            }
-            if (ind > -1)
-            {
-                personList.RemoveAt(ind);
-            }
+            Console.WriteLine("");
+            Console.Write("Enter the first name: ");
+            string firstName = Console.ReadLine();
+            Console.Write("Enter the last name: ");
+            string lastName = Console.ReadLine();
+            Console.Write("Enter the address: ");
+            string address = Console.ReadLine();
+            Console.Write("Enter the city name: ");
+            string city = Console.ReadLine();
+            Console.Write("Enter the name of the state: ");
+            string state = Console.ReadLine();
+            Console.Write("Enter the zipcode: ");
+            string zipCode = Console.ReadLine();
+            Console.Write("Enter the phone number: ");
+            string phoneNum = Console.ReadLine();
+            Person addressList = new Person(firstName, lastName, address, city, state, zipCode, phoneNum);
+            personList.Add(addressList);
         }
 
         // Printing the present contacts in address book

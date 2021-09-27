@@ -11,18 +11,16 @@ namespace AddressBookSystem
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to address book system");
-            Person person = new Person("firstName", "lastName", "address", "city", "state", "zipCode", "phoneNum");
-            Console.Write("Enter the number of persons whose address book you want to maintain: ");
-            int n = Convert.ToInt32(Console.ReadLine());
-
-            // Creating initial address book with some contact address
-            Person.AddList(n);
-
-            // Deleting a contact address from address book
             Console.WriteLine("");
-            Console.Write("Enter the first name that you want to delete: ");
-            string delName = Console.ReadLine();
-            Person.Delete(delName);
+            Person person = new Person("firstName", "lastName", "address", "city", "state", "zipCode", "phoneNum");
+
+            // Adding multiple persons to address book one by one with some contact address
+            Console.Write("Enter the number of multiple persons to be added one by one: ");
+            int multiplePerson = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i < multiplePerson; i++)
+            {
+                Person.AddList();
+            }
 
             // Calling a method to print present contact in address book
             Person.PrintList();
