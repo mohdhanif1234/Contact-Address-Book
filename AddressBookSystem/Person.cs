@@ -8,10 +8,12 @@ namespace AddressBookSystem
 {
     class Person
     {
+        // UC-2: Adding a new contact in the present address book
+
+        // Declaring member data
         string firstName, lastName, address, city, state, zipCode, phoneNum;
 
         // Parameterized constructor to define member data
-
         public Person(string firstName, string lastName, string address, string city, string state, string zipCode, string phoneNum)
         {
             this.firstName = firstName;
@@ -50,6 +52,15 @@ namespace AddressBookSystem
                 personList.Add(addressList);
             }
         }
+
+        // Adding a new contact to address book
+        public static void addNewContact(string firstName, string lastName, string address, string city, string state, string zipCode, string phoneNum)
+        {
+            Person addressList = new Person("Mr.A", "PQR", "XYZ", "CityQ", "StateP", "444444", "9999999999");
+            personList.Add(addressList);
+        }
+
+        // Printing the present contacts in address book
         public static void PrintList()
         {
             for (int i = 0; i < personList.Count; i++)
@@ -65,6 +76,7 @@ namespace AddressBookSystem
                 Console.ReadLine();
             }
         }
+        
     }
 }
 

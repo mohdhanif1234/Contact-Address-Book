@@ -14,7 +14,14 @@ namespace AddressBookSystem
             Person person = new Person("firstName", "lastName", "address", "city", "state", "zipCode", "phoneNum");
             Console.Write("Enter the number of persons whose address book you want to maintain: ");
             int n = Convert.ToInt32(Console.ReadLine());
+
+            // Creating initial address book with some contact address
             Person.AddList(n);
+
+            // Adding new contact to address book
+            Person.addNewContact("firstName", "lastName", "address", "city", "state", "zipCode", "phoneNum");
+
+            // Calling a method to print present contact in address book
             Person.PrintList();
         }
     }
